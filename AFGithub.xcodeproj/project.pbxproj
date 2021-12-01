@@ -13,6 +13,10 @@
 		921D2CD227575E2E00211CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D2CD027575E2E00211CB3 /* Main.storyboard */; };
 		921D2CD427575E3000211CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921D2CD327575E3000211CB3 /* Assets.xcassets */; };
 		921D2CD727575E3000211CB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D2CD527575E3000211CB3 /* LaunchScreen.storyboard */; };
+		928736522757E83D00D7A345 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736512757E83D00D7A345 /* Coordinator.swift */; };
+		928736542757E9E800D7A345 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736532757E9E800D7A345 /* RootViewCoordinator.swift */; };
+		928736562757EA0C00D7A345 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736552757EA0C00D7A345 /* AppCoordinator.swift */; };
+		928736582757EA3400D7A345 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736572757EA3400D7A345 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		921D2CD327575E3000211CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921D2CD627575E3000211CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921D2CD827575E3000211CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928736512757E83D00D7A345 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		928736532757E9E800D7A345 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
+		928736552757EA0C00D7A345 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		928736572757EA3400D7A345 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EF4ACA30831304E0F75F6573 /* Pods_AFGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				928736492757DDCD00D7A345 /* Application */,
+				9287364D2757E80400D7A345 /* Coordinators */,
 				9287364A2757DDCE00D7A345 /* Resources */,
 				9287364B2757DDCE00D7A345 /* Supporting Files */,
 				921D2CCE27575E2E00211CB3 /* ViewController.swift */,
@@ -111,13 +120,47 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		9287364D2757E80400D7A345 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9287364E2757E80400D7A345 /* App */,
+				9287364F2757E80400D7A345 /* Root */,
+				928736502757E80400D7A345 /* Main */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		9287364E2757E80400D7A345 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				928736552757EA0C00D7A345 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9287364F2757E80400D7A345 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				928736512757E83D00D7A345 /* Coordinator.swift */,
+				928736532757E9E800D7A345 /* RootViewCoordinator.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		928736502757E80400D7A345 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				928736572757EA3400D7A345 /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		EB9720A9C4FA3399E0980C3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				1C0AD6CE5449F6E6E98D3C61 /* Pods-AFGithub.debug.xcconfig */,
 				4F947EC468DAA855FB1E3368 /* Pods-AFGithub.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,7 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */,
+				928736582757EA3400D7A345 /* MainCoordinator.swift in Sources */,
 				921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */,
+				928736562757EA0C00D7A345 /* AppCoordinator.swift in Sources */,
+				928736522757E83D00D7A345 /* Coordinator.swift in Sources */,
+				928736542757E9E800D7A345 /* RootViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
