@@ -18,4 +18,9 @@ extension UIFont {
 	public class var searchBarText: UIFont {
 		return UIFont.systemFont(ofSize: 16, weight: .regular)
 	}
+
+	//MARK: Table View
+	public class var tableViewLabelPrimary: UIFont {
+		return UIFont.systemFont(ofSize: 18, weight: .medium)
+	}
 }

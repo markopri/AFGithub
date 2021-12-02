@@ -30,6 +30,8 @@ class UsersListViewController: BaseViewController {
         super.viewDidLoad()
 
 		self.navigationItem.title = "Users"
+
+		tableView.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListTableViewCell")
     }
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -50,11 +52,14 @@ extension UsersListViewController {
 //MARK: UITableView Datasource/Delegate
 extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return 15
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
+		let cell = tableView.dequeueReusableCell(withIdentifier: "UsersListTableViewCell", for: indexPath) as! UsersListTableViewCell
+		cell.setupLayout()
+
+		return cell
 	}
 }
 

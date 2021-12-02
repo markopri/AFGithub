@@ -38,4 +38,13 @@ extension UIColor {
 	public class var searchBarTint: UIColor {
 		return UIColor(named: "search_bar_tint")!
 	}
+
+	//MARK: Table View
+	public class var tableViewCellBackgroundPrimary: UIColor {
+		return UIColor(named: "table_view_cell_background_primary")!
+	}
+
+	public class var tableViewCellLabelTextPrimary: UIColor {
+		return UIColor(named: "table_view_cell_label_text_primary")!
+	}
 }
