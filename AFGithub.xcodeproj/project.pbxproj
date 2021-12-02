@@ -15,6 +15,7 @@
 		9214E22A275929F100D44A2C /* APIManagerMainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E229275929F100D44A2C /* APIManagerMainFlow.swift */; };
 		9214E22D2759402A00D44A2C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E22C2759402A00D44A2C /* UserModel.swift */; };
 		9214E2302759835200D44A2C /* SearchUsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E22F2759835200D44A2C /* SearchUsersModel.swift */; };
+		9214E2332759875800D44A2C /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E2322759875800D44A2C /* AlertUtil.swift */; };
 		921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D2CCA27575E2E00211CB3 /* AppDelegate.swift */; };
 		921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D2CCE27575E2E00211CB3 /* ViewController.swift */; };
 		921D2CD227575E2E00211CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D2CD027575E2E00211CB3 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		9214E229275929F100D44A2C /* APIManagerMainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMainFlow.swift; sourceTree = "<group>"; };
 		9214E22C2759402A00D44A2C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		9214E22F2759835200D44A2C /* SearchUsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersModel.swift; sourceTree = "<group>"; };
+		9214E2322759875800D44A2C /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		921D2CC727575E2E00211CB3 /* AFGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921D2CCA27575E2E00211CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		921D2CCE27575E2E00211CB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = "Search Models";
 			sourceTree = "<group>";
 		};
+		9214E2312759874900D44A2C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9214E2322759875800D44A2C /* AlertUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		921D2CBE27575E2E00211CB3 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 				928736602757EE4700D7A345 /* Extensions */,
 				9214E22B2759401900D44A2C /* Models */,
 				9287367F2758E7ED00D7A345 /* Network */,
+				9214E2312759874900D44A2C /* Utils */,
 				9287364A2757DDCE00D7A345 /* Resources */,
 				9287364B2757DDCE00D7A345 /* Supporting Files */,
 				921D2CCE27575E2E00211CB3 /* ViewController.swift */,
@@ -480,6 +491,7 @@
 				921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */,
 				9214E228275929E400D44A2C /* APIRouterMainFlow.swift in Sources */,
 				928736582757EA3400D7A345 /* MainCoordinator.swift in Sources */,
+				9214E2332759875800D44A2C /* AlertUtil.swift in Sources */,
 				9287366A2757F82A00D7A345 /* UsersListLogicController.swift in Sources */,
 				928736722758B32A00D7A345 /* UISearchBar+Extensions.swift in Sources */,
 				921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */,

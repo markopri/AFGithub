@@ -98,7 +98,11 @@ private extension UsersListViewController {
 				tableView.reloadData()
 			case .failed(let error):
 				loadingViewController.hideLoadingView()
-				print("Error occured: \(error)")
+				self.tableViewDataList.removeAll()
+				tableView.reloadData()
+				AlertUtil.showAlert(title: error) {
+					print("INFO: UsersListViewController -> User clicked OK on alert for failure")
+				}
 		}
 	}
 }
