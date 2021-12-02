@@ -20,4 +20,17 @@ class APIManagerMainFlow {
 			}
 		}
 	}
+
+	static func searchUsers(username: String, completion: @escaping(SearchUsersModel) -> (), failure: @escaping (String) -> ()) {
+		AF.request(APIRouterMainFlow.searchUsers(username)).responseData { (response) in
+			NetworkData.responseHandler(dataType: SearchUsersModel.self, response: response) { response in
+				switch response {
+					case .success(let data):
+						completion(data)
+					case .failure(let error):
+						failure(error)
+				}
+			}
+		}
+	}
 }

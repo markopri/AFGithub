@@ -9,11 +9,14 @@ import Alamofire
 
 enum APIRouterMainFlow: URLRequestConvertible {
 	case getAllUsers
+	case searchUsers(String)
 
 	var path: String {
 		switch self {
 			case .getAllUsers:
 				return "/users"
+			case .searchUsers:
+				return "/search/users"
 		}
 	}
 
@@ -21,11 +24,18 @@ enum APIRouterMainFlow: URLRequestConvertible {
 		switch self {
 			case .getAllUsers:
 				return .get
+			case .searchUsers:
+				return .get
 		}
 	}
 
 	var parameters: Parameters {
-		return [:]
+		switch self {
+			case .searchUsers(let username):
+				return ["q": username]
+			default:
+				return [:]
+		}
 	}
 
 	func asURLRequest() throws -> URLRequest {

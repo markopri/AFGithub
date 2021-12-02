@@ -48,7 +48,7 @@ extension UsersListViewController {
 	func preformInitalStateActions() {
 		tableViewDataList.removeAll()
 
-		logicController.getUsersListData { [weak self] state in
+		logicController.getUsersListData(username: "") { [weak self] state in
 			self?.handleState(state)
 		}
 	}
@@ -79,6 +79,10 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 extension UsersListViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
+
+		logicController.getUsersListData(username: searchBar.searchTextField.text ?? "") { [weak self] state in
+			self?.handleState(state)
+		}
 	}
 }
 

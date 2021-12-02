@@ -16,15 +16,22 @@ class UsersListLogicController {
 	typealias Handler = (UsersListStateModel) -> Void
 	weak var delegate: UsersListDelegate?
 
-	func getUsersListData(handler: @escaping Handler) {
+	func getUsersListData(username: String, then handler: @escaping Handler) {
 		handler(.loading)
 
-		APIManagerMainFlow.getAllUsers { (data) in
-			handler(.success(data))
-		} failure: { error in
-			handler(.failed(error))
+		if username == "" {
+			APIManagerMainFlow.getAllUsers { data in
+				handler(.success(data))
+			} failure: { error in
+				handler(.failed(error))
+			}
+		} else {
+			APIManagerMainFlow.searchUsers(username: username) { data in
+				handler(.success(data.items))
+			} failure: { error in
+				handler(.failed(error))
+			}
 		}
-
 	}
 }
 
