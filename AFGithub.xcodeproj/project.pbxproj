@@ -21,6 +21,11 @@
 		9287365F2757ED1500D7A345 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287365E2757ED1500D7A345 /* LoadingViewController.swift */; };
 		928736622757EE5C00D7A345 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736612757EE5C00D7A345 /* UIColor+Extensions.swift */; };
 		928736642757EEB000D7A345 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736632757EEB000D7A345 /* UIFont+Extensions.swift */; };
+		9287366A2757F82A00D7A345 /* UsersListLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736692757F82A00D7A345 /* UsersListLogicController.swift */; };
+		9287366D2757F83900D7A345 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287366B2757F83900D7A345 /* UsersListViewController.swift */; };
+		9287366E2757F83900D7A345 /* UsersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9287366C2757F83900D7A345 /* UsersListViewController.xib */; };
+		928736702757F84D00D7A345 /* UsersListStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287366F2757F84D00D7A345 /* UsersListStateModel.swift */; };
+		928736722758B32A00D7A345 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928736712758B32900D7A345 /* UISearchBar+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		9287365E2757ED1500D7A345 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		928736612757EE5C00D7A345 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		928736632757EEB000D7A345 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		928736692757F82A00D7A345 /* UsersListLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListLogicController.swift; sourceTree = "<group>"; };
+		9287366B2757F83900D7A345 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		9287366C2757F83900D7A345 /* UsersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListViewController.xib; sourceTree = "<group>"; };
+		9287366F2757F84D00D7A345 /* UsersListStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListStateModel.swift; sourceTree = "<group>"; };
+		928736712758B32900D7A345 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
 		EF4ACA30831304E0F75F6573 /* Pods_AFGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +187,7 @@
 		9287365A2757EC9D00D7A345 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				928736652757F7E300D7A345 /* Main Flow */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,8 +206,44 @@
 			children = (
 				928736612757EE5C00D7A345 /* UIColor+Extensions.swift */,
 				928736632757EEB000D7A345 /* UIFont+Extensions.swift */,
+				928736712758B32900D7A345 /* UISearchBar+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		928736652757F7E300D7A345 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				928736662757F7E300D7A345 /* Users List */,
+			);
+			path = "Main Flow";
+			sourceTree = "<group>";
+		};
+		928736662757F7E300D7A345 /* Users List */ = {
+			isa = PBXGroup;
+			children = (
+				928736672757F7E300D7A345 /* Controller */,
+				928736682757F7E300D7A345 /* State Model */,
+			);
+			path = "Users List";
+			sourceTree = "<group>";
+		};
+		928736672757F7E300D7A345 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928736692757F82A00D7A345 /* UsersListLogicController.swift */,
+				9287366B2757F83900D7A345 /* UsersListViewController.swift */,
+				9287366C2757F83900D7A345 /* UsersListViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		928736682757F7E300D7A345 /* State Model */ = {
+			isa = PBXGroup;
+			children = (
+				9287366F2757F84D00D7A345 /* UsersListStateModel.swift */,
+			);
+			path = "State Model";
 			sourceTree = "<group>";
 		};
 		EB9720A9C4FA3399E0980C3B /* Pods */ = {
@@ -268,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921D2CD727575E3000211CB3 /* LaunchScreen.storyboard in Resources */,
+				9287366E2757F83900D7A345 /* UsersListViewController.xib in Resources */,
 				921D2CD427575E3000211CB3 /* Assets.xcassets in Resources */,
 				921D2CD227575E2E00211CB3 /* Main.storyboard in Resources */,
 			);
@@ -307,11 +355,15 @@
 			files = (
 				921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */,
 				928736582757EA3400D7A345 /* MainCoordinator.swift in Sources */,
+				9287366A2757F82A00D7A345 /* UsersListLogicController.swift in Sources */,
+				928736722758B32A00D7A345 /* UISearchBar+Extensions.swift in Sources */,
 				921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */,
 				9287365F2757ED1500D7A345 /* LoadingViewController.swift in Sources */,
+				9287366D2757F83900D7A345 /* UsersListViewController.swift in Sources */,
 				928736562757EA0C00D7A345 /* AppCoordinator.swift in Sources */,
 				928736522757E83D00D7A345 /* Coordinator.swift in Sources */,
 				9287365D2757ECDB00D7A345 /* BaseViewController.swift in Sources */,
+				928736702757F84D00D7A345 /* UsersListStateModel.swift in Sources */,
 				928736622757EE5C00D7A345 /* UIColor+Extensions.swift in Sources */,
 				928736642757EEB000D7A345 /* UIFont+Extensions.swift in Sources */,
 				928736542757E9E800D7A345 /* RootViewCoordinator.swift in Sources */,

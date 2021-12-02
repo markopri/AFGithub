@@ -25,4 +25,17 @@ extension UIColor {
 	public class var loadingIndicatorTint: UIColor {
 		return UIColor(named: "loading_indicator_tint")!
 	}
+
+	//MARK: Search Bar
+	public class var searchBarBackground: UIColor {
+		return UIColor(named: "search_bar_background")!
+	}
+
+	public class var searchBarText: UIColor {
+		return UIColor(named: "search_bar_text")!
+	}
+
+	public class var searchBarTint: UIColor {
+		return UIColor(named: "search_bar_tint")!
+	}
 }

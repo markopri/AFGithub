@@ -13,4 +13,9 @@ extension UIFont {
 	public class var navigationBarTitle: UIFont {
 		return UIFont.systemFont(ofSize: 24, weight: .bold)
 	}
+
+	//MARK: Search Bar
+	public class var searchBarText: UIFont {
+		return UIFont.systemFont(ofSize: 16, weight: .regular)
+	}
 }

@@ -23,7 +23,16 @@ class MainCoordinator: RootViewCoordinator {
 	}
 
 	func startCoordinator() {
-		let viewController = ViewController()
+		let logicController = UsersListLogicController()
+		logicController.delegate = self
+
+		let viewController = UsersListViewController(logicController: logicController)
 		self.navigationController.pushViewController(viewController, animated: true)
+	}
+}
+
+extension MainCoordinator: UsersListDelegate {
+	func goToUserRepositoryList() {
+		print("UserListDelegate: Connect to next view controller")
 	}
 }
