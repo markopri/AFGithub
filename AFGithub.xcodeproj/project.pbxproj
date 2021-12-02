@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0029F0D862823F03A09D7127 /* Pods_AFGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4ACA30831304E0F75F6573 /* Pods_AFGithub.framework */; };
+		9214E21D2759150600D44A2C /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E21C2759150600D44A2C /* NetworkResponse.swift */; };
+		9214E21F2759152600D44A2C /* NetworkStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E21E2759152600D44A2C /* NetworkStatusCode.swift */; };
+		9214E2212759156800D44A2C /* NetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E2202759156800D44A2C /* NetworkData.swift */; };
+		9214E228275929E400D44A2C /* APIRouterMainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E227275929E400D44A2C /* APIRouterMainFlow.swift */; };
+		9214E22A275929F100D44A2C /* APIManagerMainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E229275929F100D44A2C /* APIManagerMainFlow.swift */; };
+		9214E22D2759402A00D44A2C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214E22C2759402A00D44A2C /* UserModel.swift */; };
 		921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D2CCA27575E2E00211CB3 /* AppDelegate.swift */; };
 		921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D2CCE27575E2E00211CB3 /* ViewController.swift */; };
 		921D2CD227575E2E00211CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D2CD027575E2E00211CB3 /* Main.storyboard */; };
@@ -35,6 +41,12 @@
 /* Begin PBXFileReference section */
 		1C0AD6CE5449F6E6E98D3C61 /* Pods-AFGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFGithub.debug.xcconfig"; path = "Target Support Files/Pods-AFGithub/Pods-AFGithub.debug.xcconfig"; sourceTree = "<group>"; };
 		4F947EC468DAA855FB1E3368 /* Pods-AFGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFGithub.release.xcconfig"; path = "Target Support Files/Pods-AFGithub/Pods-AFGithub.release.xcconfig"; sourceTree = "<group>"; };
+		9214E21C2759150600D44A2C /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		9214E21E2759152600D44A2C /* NetworkStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusCode.swift; sourceTree = "<group>"; };
+		9214E2202759156800D44A2C /* NetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkData.swift; sourceTree = "<group>"; };
+		9214E227275929E400D44A2C /* APIRouterMainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterMainFlow.swift; sourceTree = "<group>"; };
+		9214E229275929F100D44A2C /* APIManagerMainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMainFlow.swift; sourceTree = "<group>"; };
+		9214E22C2759402A00D44A2C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		921D2CC727575E2E00211CB3 /* AFGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921D2CCA27575E2E00211CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		921D2CCE27575E2E00211CB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +94,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9214E226275929CD00D44A2C /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				9214E227275929E400D44A2C /* APIRouterMainFlow.swift */,
+				9214E229275929F100D44A2C /* APIManagerMainFlow.swift */,
+			);
+			path = "Main Flow";
+			sourceTree = "<group>";
+		};
+		9214E22B2759401900D44A2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9214E22C2759402A00D44A2C /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		921D2CBE27575E2E00211CB3 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +136,8 @@
 				9287364D2757E80400D7A345 /* Coordinators */,
 				928736592757EC9D00D7A345 /* UI */,
 				928736602757EE4700D7A345 /* Extensions */,
+				9214E22B2759401900D44A2C /* Models */,
+				9287367F2758E7ED00D7A345 /* Network */,
 				9287364A2757DDCE00D7A345 /* Resources */,
 				9287364B2757DDCE00D7A345 /* Supporting Files */,
 				921D2CCE27575E2E00211CB3 /* ViewController.swift */,
@@ -290,6 +321,25 @@
 			path = "Users List";
 			sourceTree = "<group>";
 		};
+		9287367F2758E7ED00D7A345 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				928736802758E7ED00D7A345 /* Base */,
+				9214E226275929CD00D44A2C /* Main Flow */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		928736802758E7ED00D7A345 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9214E21C2759150600D44A2C /* NetworkResponse.swift */,
+				9214E21E2759152600D44A2C /* NetworkStatusCode.swift */,
+				9214E2202759156800D44A2C /* NetworkData.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		EB9720A9C4FA3399E0980C3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +360,7 @@
 				921D2CC327575E2E00211CB3 /* Sources */,
 				921D2CC427575E2E00211CB3 /* Frameworks */,
 				921D2CC527575E2E00211CB3 /* Resources */,
+				3A3788FA2B4F6C66C395AE49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +420,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A3788FA2B4F6C66C395AE49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AFGithub/Pods-AFGithub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AFGithub/Pods-AFGithub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AFGithub/Pods-AFGithub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AAE9677E219B3FADF9E30367 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,20 +467,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				921D2CCF27575E2E00211CB3 /* ViewController.swift in Sources */,
+				9214E228275929E400D44A2C /* APIRouterMainFlow.swift in Sources */,
 				928736582757EA3400D7A345 /* MainCoordinator.swift in Sources */,
 				9287366A2757F82A00D7A345 /* UsersListLogicController.swift in Sources */,
 				928736722758B32A00D7A345 /* UISearchBar+Extensions.swift in Sources */,
 				921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */,
+				9214E21D2759150600D44A2C /* NetworkResponse.swift in Sources */,
 				9287365F2757ED1500D7A345 /* LoadingViewController.swift in Sources */,
+				9214E22D2759402A00D44A2C /* UserModel.swift in Sources */,
 				9287367E2758CC4600D7A345 /* UIView+Extensions.swift in Sources */,
+				9214E2212759156800D44A2C /* NetworkData.swift in Sources */,
 				9287366D2757F83900D7A345 /* UsersListViewController.swift in Sources */,
 				928736562757EA0C00D7A345 /* AppCoordinator.swift in Sources */,
 				9287367B2758BF7600D7A345 /* UsersListTableViewCell.swift in Sources */,
 				928736522757E83D00D7A345 /* Coordinator.swift in Sources */,
 				9287365D2757ECDB00D7A345 /* BaseViewController.swift in Sources */,
+				9214E22A275929F100D44A2C /* APIManagerMainFlow.swift in Sources */,
 				928736702757F84D00D7A345 /* UsersListStateModel.swift in Sources */,
 				928736782758BF6000D7A345 /* UsersListTableViewCellModel.swift in Sources */,
 				928736622757EE5C00D7A345 /* UIColor+Extensions.swift in Sources */,
+				9214E21F2759152600D44A2C /* NetworkStatusCode.swift in Sources */,
 				928736642757EEB000D7A345 /* UIFont+Extensions.swift in Sources */,
 				928736542757E9E800D7A345 /* RootViewCoordinator.swift in Sources */,
 			);
@@ -560,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C0AD6CE5449F6E6E98D3C61 /* Pods-AFGithub.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_URL_ENDPOINT = "https://api.github.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -590,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F947EC468DAA855FB1E3368 /* Pods-AFGithub.release.xcconfig */;
 			buildSettings = {
+				API_BASE_URL_ENDPOINT = "https://api.github.com";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

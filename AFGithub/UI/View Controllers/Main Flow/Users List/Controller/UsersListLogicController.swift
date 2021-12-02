@@ -18,6 +18,13 @@ class UsersListLogicController {
 
 	func getUsersListData(handler: @escaping Handler) {
 		handler(.loading)
+
+		APIManagerMainFlow.getAllUsers { (data) in
+			handler(.success(data))
+		} failure: { error in
+			handler(.failed(error))
+		}
+
 	}
 }
 

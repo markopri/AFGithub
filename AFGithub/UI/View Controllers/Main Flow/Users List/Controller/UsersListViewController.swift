@@ -14,6 +14,7 @@ class UsersListViewController: BaseViewController {
 
 	//MARK: Properties
 	private var logicController: UsersListLogicController
+	var tableViewDataList: [UserModel] = []
 
 	//MARK: Initializers
 	init(logicController: UsersListLogicController) {
@@ -38,11 +39,20 @@ class UsersListViewController: BaseViewController {
 		super.viewWillAppear(animated)
 
 		setupLayout()
+		preformInitalStateActions()
 	}
 
 }
 
 extension UsersListViewController {
+	func preformInitalStateActions() {
+		tableViewDataList.removeAll()
+
+		logicController.getUsersListData { [weak self] state in
+			self?.handleState(state)
+		}
+	}
+
 	func setupLayout() {
 		searchBar.placeholder = "Enter username"
 		searchBar.setupDefaultLayout()
@@ -52,12 +62,14 @@ extension UsersListViewController {
 //MARK: UITableView Datasource/Delegate
 extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 15
+		return tableViewDataList.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "UsersListTableViewCell", for: indexPath) as! UsersListTableViewCell
-		cell.setupLayout()
+		let model = UsersListTableViewCellModel(username: tableViewDataList[indexPath.row].login, avatarImageUrl: tableViewDataList[indexPath.row].avatarUrl)
+
+		cell.setupLayout(model: model)
 
 		return cell
 	}
@@ -76,10 +88,13 @@ private extension UsersListViewController {
 		switch state {
 			case .loading:
 				loadingViewController.showLoadingView()
-			case .success:
+			case .success(let data):
 				loadingViewController.hideLoadingView()
-			case .failed:
+				self.tableViewDataList = data
+				tableView.reloadData()
+			case .failed(let error):
 				loadingViewController.hideLoadingView()
+				print("Error occured: \(error)")
 		}
 	}
 }

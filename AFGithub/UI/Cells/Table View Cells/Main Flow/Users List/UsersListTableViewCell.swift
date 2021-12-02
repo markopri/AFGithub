@@ -26,13 +26,20 @@ class UsersListTableViewCell: UITableViewCell {
 }
 
 extension UsersListTableViewCell {
-	func setupLayout() {
+	func setupLayout(model: UsersListTableViewCellModel) {
 		cellBackgroundView.roundViewDefault(backgroundColor: .tableViewCellBackgroundPrimary)
 
 		lblUsername.font = .tableViewLabelPrimary
 		lblUsername.textColor = .tableViewCellLabelTextPrimary
-		lblUsername.text = "Username"
+		lblUsername.text = model.username
 
-		imgAvatar.image = UIImage(systemName: "face.smiling")
+		guard let imageURL = URL(string: model.avatarImageUrl) else { return }
+		DispatchQueue.global().async {
+			guard let imageData = try? Data(contentsOf: imageURL) else { return }
+			let image = UIImage(data: imageData)
+			DispatchQueue.main.async {
+				self.imgAvatar.image = image
+			}
+		}
 	}
 }
