@@ -72,6 +72,13 @@ extension UserRepositoriesListViewController: UITableViewDelegate, UITableViewDa
 
 		cell.setupLayout(model: model)
 
+		if (indexPath.row == tableViewDataList.count - 1 && (indexPath.row+1) % 30 == 0) {
+			logicController.getUserRepositoriesList { [weak self] state in
+				self?.handleState(state)
+			}
+		}
+
+
 		return cell
 	}
 
@@ -102,7 +109,7 @@ private extension UserRepositoriesListViewController {
 	}
 
 	func executeStateSuccess(data: [RepositoryModel]) {
-		self.tableViewDataList = data
+		self.tableViewDataList.append(contentsOf: data)
 		lblInfo.isHidden = true
 		tableView.reloadData()
 	}

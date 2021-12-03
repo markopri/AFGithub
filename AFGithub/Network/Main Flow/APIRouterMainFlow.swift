@@ -10,7 +10,7 @@ import Alamofire
 enum APIRouterMainFlow: URLRequestConvertible {
 	case getAllUsers(Int)
 	case searchUsers(String)
-	case getAllUserRepositories(String)
+	case getAllUserRepositories(String, Int)
 	case getRepositoryDetails(String, String)
 
 	var path: String {
@@ -19,7 +19,7 @@ enum APIRouterMainFlow: URLRequestConvertible {
 				return "/users"
 			case .searchUsers:
 				return "/search/users"
-			case .getAllUserRepositories(let username):
+			case .getAllUserRepositories(let username, let page):
 				return "/users/\(username)/repos"
 			case .getRepositoryDetails(let username, let repositoryName):
 				return "/repos/\(username)/\(repositoryName)"
@@ -45,6 +45,8 @@ enum APIRouterMainFlow: URLRequestConvertible {
 				return["since": sinceLastId]
 			case .searchUsers(let username):
 				return ["q": username]
+			case .getAllUserRepositories(_, let page):
+				return ["page": page]
 			default:
 				return [:]
 		}

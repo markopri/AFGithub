@@ -76,7 +76,7 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 
 		cell.setupLayout(model: model)
 
-		if indexPath.row == tableViewDataList.count - 1 {
+		if (indexPath.row == tableViewDataList.count - 1 && (indexPath.row+1) % 30 == 0) {
 			logicController.getUsersListData(username: logicController.username, sinceLastId: tableViewDataList[indexPath.row].id) { [weak self] state in
 				self?.handleState(state)
 			}

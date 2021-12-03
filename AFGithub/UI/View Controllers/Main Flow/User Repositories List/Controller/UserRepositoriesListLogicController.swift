@@ -16,6 +16,7 @@ class UserRepositoriesListLogicController {
 	typealias Handler = (UserRepositoriesListStateModel) -> Void
 	weak var delegate: UserRepositoriesListDelegate?
 	var username: String
+	var page: Int = 0
 
 	init(username: String) {
 		self.username = username
@@ -23,8 +24,9 @@ class UserRepositoriesListLogicController {
 
 	func getUserRepositoriesList(handler: @escaping Handler) {
 		handler(.loading)
+		self.page += 1
 
-		APIManagerMainFlow.searchUserRepositories(username: self.username) { data in
+		APIManagerMainFlow.searchUserRepositories(username: self.username, page: self.page) { data in
 			if data.count == 0 {
 				handler(.successShowInfo)
 			} else {
