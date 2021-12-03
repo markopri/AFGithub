@@ -50,6 +50,7 @@ extension BaseViewController {
 		appearance.backgroundColor = backgroundColor
 
 		self.navigationController?.navigationBar.standardAppearance = appearance
+		self.navigationController?.navigationBar.tintColor = tintColor
 		self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor, NSAttributedString.Key.font: UIFont.navigationBarTitle]
 		self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
 		navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

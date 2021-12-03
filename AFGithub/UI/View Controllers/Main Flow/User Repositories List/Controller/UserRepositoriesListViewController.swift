@@ -29,7 +29,7 @@ class UserRepositoriesListViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.navigationItem.title = "User repositories"
+		self.navigationItem.title = logicController.username
 
 		tableView.register(UINib(nibName: "RepositoryListTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryListTableViewCell")
     }

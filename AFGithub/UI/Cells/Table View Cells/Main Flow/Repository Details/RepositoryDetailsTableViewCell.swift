@@ -26,7 +26,7 @@ class RepositoryDetailsTableViewCell: UITableViewCell {
 
 extension RepositoryDetailsTableViewCell {
 	func setupLayout(model: RepositoryDetailsTableViewCellModel) {
-		cellBackgroundView.roundViewDefault(backgroundColor: .tableViewCellBackgroundPrimary)
+		cellBackgroundView.squareViewDefault(backgroundColor: .tableViewCellBackgroundPrimary)
 
 		lblContent.font = .tableViewLabelSecondary
 		lblContent.textColor = .tableViewCellLabelTextPrimary

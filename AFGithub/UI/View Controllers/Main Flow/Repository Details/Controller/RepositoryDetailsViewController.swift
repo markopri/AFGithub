@@ -28,7 +28,7 @@ class RepositoryDetailsViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.navigationItem.title = "Repository details"
+		self.navigationItem.title = logicController.repositoryName
 
 		tableView.register(UINib(nibName: "RepositoryDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryDetailsTableViewCell")
     }

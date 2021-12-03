@@ -15,4 +15,9 @@ extension UIView {
 		self.layer.borderColor = UIColor.clear.cgColor
 		self.layer.backgroundColor = backgroundColor.cgColor
 	}
+
+	func squareViewDefault(backgroundColor: UIColor) {
+		self.layer.borderColor = UIColor.clear.cgColor
+		self.layer.backgroundColor = backgroundColor.cgColor
+	}
 }
