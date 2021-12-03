@@ -25,7 +25,11 @@ class UserRepositoriesListLogicController {
 		handler(.loading)
 
 		APIManagerMainFlow.searchUserRepositories(username: self.username) { data in
-			handler(.success(data))
+			if data.count == 0 {
+				handler(.successShowInfo)
+			} else {
+				handler(.success(data))
+			}
 		} failure: { error in
 			handler(.failed(error))
 		}

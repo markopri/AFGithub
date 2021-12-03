@@ -10,5 +10,6 @@ import Foundation
 enum UsersListStateModel {
 	case loading
 	case success([UserModel])
+	case successShowInfo
 	case failed(String)
 }

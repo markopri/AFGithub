@@ -10,5 +10,6 @@ import Foundation
 enum UserRepositoriesListStateModel {
 	case loading
 	case success([RepositoryModel])
+	case successShowInfo
 	case failed(String)
 }

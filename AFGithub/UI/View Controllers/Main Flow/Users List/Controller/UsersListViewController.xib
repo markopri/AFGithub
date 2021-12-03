@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsersListViewController" customModule="AFGithub" customModuleProvider="target">
             <connections>
+                <outlet property="lblInfo" destination="tXD-8z-3gg" id="Zd4-Xu-mqp"/>
                 <outlet property="searchBar" destination="wbq-1r-pTb" id="3NM-XH-wJC"/>
                 <outlet property="tableView" destination="mUG-jE-SBd" id="nVg-sr-xAX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,13 +38,23 @@
                         <outlet property="delegate" destination="-1" id="3Pr-u3-avy"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXD-8z-3gg">
+                    <rect key="frame" x="8" y="438" width="398" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="tXD-8z-3gg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="23r-nt-Cgx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mUG-jE-SBd" secondAttribute="bottom" id="Nus-bX-jDf"/>
+                <constraint firstItem="tXD-8z-3gg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="OoU-6m-t4G"/>
                 <constraint firstItem="wbq-1r-pTb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RLf-mv-V7j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tXD-8z-3gg" secondAttribute="trailing" constant="8" id="gJl-dB-76n"/>
                 <constraint firstItem="wbq-1r-pTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="kR0-2L-Fjn"/>
+                <constraint firstItem="tXD-8z-3gg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lSJ-22-cIk"/>
                 <constraint firstItem="mUG-jE-SBd" firstAttribute="top" secondItem="wbq-1r-pTb" secondAttribute="bottom" constant="8" id="rLQ-w0-vyH"/>
                 <constraint firstItem="mUG-jE-SBd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="y1B-Uw-lUZ"/>
                 <constraint firstItem="wbq-1r-pTb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zCz-es-rhR"/>

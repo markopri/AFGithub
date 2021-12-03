@@ -11,6 +11,7 @@ class UsersListViewController: BaseViewController {
 	//MARK: Outlets
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var lblInfo: UILabel!
 
 	//MARK: Properties
 	private var logicController: UsersListLogicController
@@ -31,6 +32,7 @@ class UsersListViewController: BaseViewController {
         super.viewDidLoad()
 
 		self.navigationItem.title = "Users"
+		preformInitalStateActions()
 
 		tableView.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListTableViewCell")
     }
@@ -39,7 +41,6 @@ class UsersListViewController: BaseViewController {
 		super.viewWillAppear(animated)
 
 		setupLayout()
-		preformInitalStateActions()
 	}
 }
 
@@ -55,6 +56,11 @@ extension UsersListViewController {
 	func setupLayout() {
 		searchBar.placeholder = "Enter username"
 		searchBar.setupDefaultLayout()
+
+		lblInfo.text = "There is currently no data to display. Please try again with different search term or try again later."
+		lblInfo.font = .labelInfo
+		lblInfo.textColor = .labelTextPrimary
+		lblInfo.isHidden = true
 	}
 }
 
@@ -97,15 +103,28 @@ private extension UsersListViewController {
 				loadingViewController.showLoadingView()
 			case .success(let data):
 				loadingViewController.hideLoadingView()
-				self.tableViewDataList = data
-				tableView.reloadData()
+				executeStateSuccess(data: data)
+			case .successShowInfo:
+				loadingViewController.hideLoadingView()
+				executeStateSuccessShowInfo()
 			case .failed(let error):
 				loadingViewController.hideLoadingView()
-				self.tableViewDataList.removeAll()
-				tableView.reloadData()
+				executeStateSuccessShowInfo()
 				AlertUtil.showAlert(title: error) {
 					print("INFO: UsersListViewController -> User clicked OK on alert for failure")
 				}
 		}
+	}
+
+	func executeStateSuccess(data: [UserModel]) {
+		self.tableViewDataList = data
+		lblInfo.isHidden = true
+		tableView.reloadData()
+	}
+
+	func executeStateSuccessShowInfo() {
+		self.tableViewDataList.removeAll()
+		lblInfo.isHidden = false
+		tableView.reloadData()
 	}
 }

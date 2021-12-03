@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserRepositoriesListViewController" customModule="AFGithub" customModuleProvider="target">
             <connections>
+                <outlet property="lblInfo" destination="zJV-iv-LrD" id="Zel-yb-PGk"/>
                 <outlet property="tableView" destination="IDg-kR-3Hu" id="yE9-T5-soG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,14 +29,24 @@
                         <outlet property="delegate" destination="-1" id="lew-BB-vnb"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJV-iv-LrD">
+                    <rect key="frame" x="8" y="438" width="398" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="IDg-kR-3Hu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="BfM-4M-JcP"/>
+                <constraint firstItem="zJV-iv-LrD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="IrG-tm-wHe"/>
                 <constraint firstItem="IDg-kR-3Hu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="RW0-f8-um8"/>
                 <constraint firstItem="IDg-kR-3Hu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Uoa-Lg-TMw"/>
                 <constraint firstItem="IDg-kR-3Hu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Wxc-hf-KaO"/>
+                <constraint firstItem="zJV-iv-LrD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jTO-5e-CGa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zJV-iv-LrD" secondAttribute="trailing" constant="8" id="kPR-sx-04d"/>
+                <constraint firstItem="zJV-iv-LrD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w96-g0-hUg"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </view>

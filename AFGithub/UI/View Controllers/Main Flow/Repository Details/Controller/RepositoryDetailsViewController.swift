@@ -29,14 +29,13 @@ class RepositoryDetailsViewController: BaseViewController {
         super.viewDidLoad()
 
 		self.navigationItem.title = logicController.repositoryName
+		preformInitalStateActions()
 
 		tableView.register(UINib(nibName: "RepositoryDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryDetailsTableViewCell")
     }
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-
-		preformInitalStateActions()
 	}
 }
 

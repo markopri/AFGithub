@@ -21,13 +21,21 @@ class UsersListLogicController {
 
 		if username == "" {
 			APIManagerMainFlow.getAllUsers { data in
-				handler(.success(data))
+				if data.count == 0 {
+					handler(.successShowInfo)
+				} else {
+					handler(.success(data))
+				}
 			} failure: { error in
 				handler(.failed(error))
 			}
 		} else {
 			APIManagerMainFlow.searchUsers(username: username) { data in
-				handler(.success(data.items))
+				if data.items.count == 0 {
+					handler(.successShowInfo)
+				} else {
+					handler(.success(data.items))
+				}
 			} failure: { error in
 				handler(.failed(error))
 			}

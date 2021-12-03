@@ -47,4 +47,9 @@ extension UIColor {
 	public class var tableViewCellLabelTextPrimary: UIColor {
 		return UIColor(named: "table_view_cell_label_text_primary")!
 	}
+
+	//Label
+	public class var labelTextPrimary: UIColor {
+		return UIColor(named: "label_text_primary")!
+	}
 }

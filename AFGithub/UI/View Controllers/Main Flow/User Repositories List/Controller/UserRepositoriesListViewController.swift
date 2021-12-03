@@ -10,6 +10,7 @@ import UIKit
 class UserRepositoriesListViewController: BaseViewController {
 	//MARK: Outlets
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var lblInfo: UILabel!
 
 	//MARK: Properties
 	private var logicController: UserRepositoriesListLogicController
@@ -30,6 +31,7 @@ class UserRepositoriesListViewController: BaseViewController {
         super.viewDidLoad()
 
 		self.navigationItem.title = logicController.username
+		preformInitalStateActions()
 
 		tableView.register(UINib(nibName: "RepositoryListTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryListTableViewCell")
     }
@@ -37,7 +39,7 @@ class UserRepositoriesListViewController: BaseViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-		preformInitalStateActions()
+		setupLayout()
 	}
 }
 
@@ -48,6 +50,13 @@ extension UserRepositoriesListViewController {
 		logicController.getUserRepositoriesList { [weak self] state in
 			self?.handleState(state)
 		}
+	}
+
+	func setupLayout() {
+		lblInfo.text = "There is currently no data to display. Please try again with different user or try again later."
+		lblInfo.font = .labelInfo
+		lblInfo.textColor = .labelTextPrimary
+		lblInfo.isHidden = true
 	}
 }
 
@@ -79,15 +88,28 @@ private extension UserRepositoriesListViewController {
 				loadingViewController.showLoadingView()
 			case .success(let data):
 				loadingViewController.hideLoadingView()
-				self.tableViewDataList = data
-				tableView.reloadData()
+				executeStateSuccess(data: data)
+			case .successShowInfo:
+				loadingViewController.hideLoadingView()
+				executeStateSuccessShowInfo()
 			case .failed(let error):
 				loadingViewController.hideLoadingView()
-				self.tableViewDataList.removeAll()
-				tableView.reloadData()
+				executeStateSuccessShowInfo()
 				AlertUtil.showAlert(title: error) {
 					print("INFO: UserRepositoriesListViewController -> User clicked OK on alert for failure")
 				}
 		}
+	}
+
+	func executeStateSuccess(data: [RepositoryModel]) {
+		self.tableViewDataList = data
+		lblInfo.isHidden = true
+		tableView.reloadData()
+	}
+
+	func executeStateSuccessShowInfo() {
+		self.tableViewDataList.removeAll()
+		lblInfo.isHidden = false
+		tableView.reloadData()
 	}
 }
