@@ -11,6 +11,7 @@ enum APIRouterMainFlow: URLRequestConvertible {
 	case getAllUsers
 	case searchUsers(String)
 	case getAllUserRepositories(String)
+	case getRepositoryDetails(String, String)
 
 	var path: String {
 		switch self {
@@ -20,6 +21,8 @@ enum APIRouterMainFlow: URLRequestConvertible {
 				return "/search/users"
 			case .getAllUserRepositories(let username):
 				return "/users/\(username)/repos"
+			case .getRepositoryDetails(let username, let repositoryName):
+				return "/repos/\(username)/\(repositoryName)"
 		}
 	}
 
@@ -30,6 +33,8 @@ enum APIRouterMainFlow: URLRequestConvertible {
 			case .searchUsers:
 				return .get
 			case .getAllUserRepositories:
+				return .get
+			case .getRepositoryDetails:
 				return .get
 		}
 	}

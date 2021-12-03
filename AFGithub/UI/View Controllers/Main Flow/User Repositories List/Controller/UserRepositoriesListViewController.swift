@@ -65,6 +65,10 @@ extension UserRepositoriesListViewController: UITableViewDelegate, UITableViewDa
 
 		return cell
 	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		logicController.goToRepositoryDetails(repositoryName: self.tableViewDataList[indexPath.row].name)
+	}
 }
 
 //MARK: State Model extension
@@ -82,7 +86,7 @@ private extension UserRepositoriesListViewController {
 				self.tableViewDataList.removeAll()
 				tableView.reloadData()
 				AlertUtil.showAlert(title: error) {
-					print("INFO: UsersListViewController -> User clicked OK on alert for failure")
+					print("INFO: UserRepositoriesListViewController -> User clicked OK on alert for failure")
 				}
 		}
 	}

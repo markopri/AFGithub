@@ -42,7 +42,10 @@ extension MainCoordinator: UsersListDelegate {
 }
 
 extension MainCoordinator: UserRepositoriesListDelegate {
-	func goToRepositoryDetails() {
-		print("To be done")
+	func goToRepositoryDetails(username: String, repositoryName: String) {
+		let logicController = RepositoryDetailsLogicController(username: username, repositoryName: repositoryName)
+
+		let viewController = RepositoryDetailsViewController(logicController: logicController)
+		self.navigationController.pushViewController(viewController, animated: true)
 	}
 }

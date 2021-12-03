@@ -46,4 +46,17 @@ class APIManagerMainFlow {
 			}
 		}
 	}
+
+	static func getRepositoryDetails(username: String, repositoryName: String, completion: @escaping(RepositoryModel) -> (), failure: @escaping (String) -> ()) {
+		AF.request(APIRouterMainFlow.getRepositoryDetails(username, repositoryName)).responseData { response in
+			NetworkData.responseHandler(dataType: RepositoryModel.self, response: response) { response in
+				switch response {
+					case .success(let data):
+						completion(data)
+					case .failure(let error):
+						failure(error)
+				}
+			}
+		}
+	}
 }

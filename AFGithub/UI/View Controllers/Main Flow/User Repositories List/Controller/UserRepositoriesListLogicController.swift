@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserRepositoriesListDelegate: AnyObject {
-	func goToRepositoryDetails()
+	func goToRepositoryDetails(username: String, repositoryName: String)
 }
 
 class UserRepositoriesListLogicController {
@@ -34,7 +34,7 @@ class UserRepositoriesListLogicController {
 
 //MARK: UserRepositoriesList Delegate methods
 extension UserRepositoriesListLogicController {
-	func goToRepositoryDetails() {
-		delegate?.goToRepositoryDetails()
+	func goToRepositoryDetails(repositoryName: String) {
+		delegate?.goToRepositoryDetails(username: self.username, repositoryName: repositoryName)
 	}
 }

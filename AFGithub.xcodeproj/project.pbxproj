@@ -47,6 +47,13 @@
 		9287367C2758BF7600D7A345 /* UsersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9287367A2758BF7600D7A345 /* UsersListTableViewCell.xib */; };
 		9287367E2758CC4600D7A345 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287367D2758CC4500D7A345 /* UIView+Extensions.swift */; };
 		92BE7C42275A1AFC00CB216C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C41275A1AFC00CB216C /* String+Extensions.swift */; };
+		92BE7C47275A216F00CB216C /* RepositoryDetailsStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C46275A216F00CB216C /* RepositoryDetailsStateModel.swift */; };
+		92BE7C49275A217E00CB216C /* RepositoryDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C48275A217E00CB216C /* RepositoryDetailsLogicController.swift */; };
+		92BE7C4C275A219100CB216C /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C4A275A219100CB216C /* RepositoryDetailsViewController.swift */; };
+		92BE7C4D275A219100CB216C /* RepositoryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE7C4B275A219100CB216C /* RepositoryDetailsViewController.xib */; };
+		92BE7C50275A255700CB216C /* RepositoryDetailsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C4F275A255700CB216C /* RepositoryDetailsTableViewCellModel.swift */; };
+		92BE7C53275A257100CB216C /* RepositoryDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BE7C51275A257100CB216C /* RepositoryDetailsTableViewCell.swift */; };
+		92BE7C54275A257100CB216C /* RepositoryDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BE7C52275A257100CB216C /* RepositoryDetailsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +100,13 @@
 		9287367A2758BF7600D7A345 /* UsersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListTableViewCell.xib; sourceTree = "<group>"; };
 		9287367D2758CC4500D7A345 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		92BE7C41275A1AFC00CB216C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		92BE7C46275A216F00CB216C /* RepositoryDetailsStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsStateModel.swift; sourceTree = "<group>"; };
+		92BE7C48275A217E00CB216C /* RepositoryDetailsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsLogicController.swift; sourceTree = "<group>"; };
+		92BE7C4A275A219100CB216C /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
+		92BE7C4B275A219100CB216C /* RepositoryDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsViewController.xib; sourceTree = "<group>"; };
+		92BE7C4F275A255700CB216C /* RepositoryDetailsTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsTableViewCellModel.swift; sourceTree = "<group>"; };
+		92BE7C51275A257100CB216C /* RepositoryDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		92BE7C52275A257100CB216C /* RepositoryDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		EF4ACA30831304E0F75F6573 /* Pods_AFGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -336,6 +350,7 @@
 			children = (
 				928736662757F7E300D7A345 /* Users List */,
 				9214E234275A001700D44A2C /* User Repositories List */,
+				92BE7C43275A215700CB216C /* Repository Details */,
 			);
 			path = "Main Flow";
 			sourceTree = "<group>";
@@ -388,6 +403,7 @@
 			children = (
 				928736762758BBE100D7A345 /* Users List */,
 				9214E241275A0CFF00D44A2C /* Repository List */,
+				92BE7C4E275A253E00CB216C /* Repository Details */,
 			);
 			path = "Main Flow";
 			sourceTree = "<group>";
@@ -419,6 +435,43 @@
 				9214E2202759156800D44A2C /* NetworkData.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		92BE7C43275A215700CB216C /* Repository Details */ = {
+			isa = PBXGroup;
+			children = (
+				92BE7C44275A215700CB216C /* Controller */,
+				92BE7C45275A215700CB216C /* State Model */,
+			);
+			path = "Repository Details";
+			sourceTree = "<group>";
+		};
+		92BE7C44275A215700CB216C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92BE7C48275A217E00CB216C /* RepositoryDetailsLogicController.swift */,
+				92BE7C4A275A219100CB216C /* RepositoryDetailsViewController.swift */,
+				92BE7C4B275A219100CB216C /* RepositoryDetailsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92BE7C45275A215700CB216C /* State Model */ = {
+			isa = PBXGroup;
+			children = (
+				92BE7C46275A216F00CB216C /* RepositoryDetailsStateModel.swift */,
+			);
+			path = "State Model";
+			sourceTree = "<group>";
+		};
+		92BE7C4E275A253E00CB216C /* Repository Details */ = {
+			isa = PBXGroup;
+			children = (
+				92BE7C4F275A255700CB216C /* RepositoryDetailsTableViewCellModel.swift */,
+				92BE7C51275A257100CB216C /* RepositoryDetailsTableViewCell.swift */,
+				92BE7C52275A257100CB216C /* RepositoryDetailsTableViewCell.xib */,
+			);
+			path = "Repository Details";
 			sourceTree = "<group>";
 		};
 		EB9720A9C4FA3399E0980C3B /* Pods */ = {
@@ -491,8 +544,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				921D2CD727575E3000211CB3 /* LaunchScreen.storyboard in Resources */,
+				92BE7C4D275A219100CB216C /* RepositoryDetailsViewController.xib in Resources */,
 				9214E23E275A009900D44A2C /* UserRepositoriesListViewController.xib in Resources */,
 				9287366E2757F83900D7A345 /* UsersListViewController.xib in Resources */,
+				92BE7C54275A257100CB216C /* RepositoryDetailsTableViewCell.xib in Resources */,
 				9214E247275A0D3800D44A2C /* RepositoryListTableViewCell.xib in Resources */,
 				921D2CD427575E3000211CB3 /* Assets.xcassets in Resources */,
 				921D2CD227575E2E00211CB3 /* Main.storyboard in Resources */,
@@ -556,6 +611,7 @@
 				92BE7C42275A1AFC00CB216C /* String+Extensions.swift in Sources */,
 				9214E2332759875800D44A2C /* AlertUtil.swift in Sources */,
 				9287366A2757F82A00D7A345 /* UsersListLogicController.swift in Sources */,
+				92BE7C4C275A219100CB216C /* RepositoryDetailsViewController.swift in Sources */,
 				928736722758B32A00D7A345 /* UISearchBar+Extensions.swift in Sources */,
 				921D2CCB27575E2E00211CB3 /* AppDelegate.swift in Sources */,
 				9214E21D2759150600D44A2C /* NetworkResponse.swift in Sources */,
@@ -566,8 +622,11 @@
 				9214E2212759156800D44A2C /* NetworkData.swift in Sources */,
 				9287366D2757F83900D7A345 /* UsersListViewController.swift in Sources */,
 				928736562757EA0C00D7A345 /* AppCoordinator.swift in Sources */,
+				92BE7C50275A255700CB216C /* RepositoryDetailsTableViewCellModel.swift in Sources */,
+				92BE7C47275A216F00CB216C /* RepositoryDetailsStateModel.swift in Sources */,
 				9287367B2758BF7600D7A345 /* UsersListTableViewCell.swift in Sources */,
 				9214E246275A0D3800D44A2C /* RepositoryListTableViewCell.swift in Sources */,
+				92BE7C53275A257100CB216C /* RepositoryDetailsTableViewCell.swift in Sources */,
 				928736522757E83D00D7A345 /* Coordinator.swift in Sources */,
 				9214E238275A006200D44A2C /* UserRepositoriesListStateModel.swift in Sources */,
 				9287365D2757ECDB00D7A345 /* BaseViewController.swift in Sources */,
@@ -579,6 +638,7 @@
 				928736622757EE5C00D7A345 /* UIColor+Extensions.swift in Sources */,
 				9214E21F2759152600D44A2C /* NetworkStatusCode.swift in Sources */,
 				9214E240275A08BB00D44A2C /* RepositoryModel.swift in Sources */,
+				92BE7C49275A217E00CB216C /* RepositoryDetailsLogicController.swift in Sources */,
 				928736642757EEB000D7A345 /* UIFont+Extensions.swift in Sources */,
 				928736542757E9E800D7A345 /* RootViewCoordinator.swift in Sources */,
 			);
