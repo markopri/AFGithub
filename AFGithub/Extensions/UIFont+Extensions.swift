@@ -23,4 +23,8 @@ extension UIFont {
 	public class var tableViewLabelPrimary: UIFont {
 		return UIFont.systemFont(ofSize: 18, weight: .medium)
 	}
+
+	public class var tableViewLabelSecondary: UIFont {
+		return UIFont.systemFont(ofSize: 16, weight: .regular)
+	}
 }

@@ -41,7 +41,6 @@ class UsersListViewController: BaseViewController {
 		setupLayout()
 		preformInitalStateActions()
 	}
-
 }
 
 extension UsersListViewController {
@@ -72,6 +71,10 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.setupLayout(model: model)
 
 		return cell
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		logicController.goToUserRepositoryList(username: tableViewDataList[indexPath.row].login)
 	}
 }
 

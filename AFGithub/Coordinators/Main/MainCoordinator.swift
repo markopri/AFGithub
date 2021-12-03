@@ -32,7 +32,17 @@ class MainCoordinator: RootViewCoordinator {
 }
 
 extension MainCoordinator: UsersListDelegate {
-	func goToUserRepositoryList() {
-		print("UserListDelegate: Connect to next view controller")
+	func goToUserRepositoryList(username: String) {
+		let logicController = UserRepositoriesListLogicController(username: username)
+		logicController.delegate = self
+
+		let viewController = UserRepositoriesListViewController(logicController: logicController)
+		self.navigationController.pushViewController(viewController, animated: true)
+	}
+}
+
+extension MainCoordinator: UserRepositoriesListDelegate {
+	func goToRepositoryDetails() {
+		print("To be done")
 	}
 }
