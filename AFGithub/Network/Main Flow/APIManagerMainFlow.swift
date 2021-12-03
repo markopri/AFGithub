@@ -8,8 +8,8 @@
 import Alamofire
 
 class APIManagerMainFlow {
-	static func getAllUsers(completion: @escaping([UserModel]) -> (), failure: @escaping (String) -> ()) {
-		AF.request(APIRouterMainFlow.getAllUsers).responseData { (response) in
+	static func getAllUsers(sinceLastId: Int, completion: @escaping([UserModel]) -> (), failure: @escaping (String) -> ()) {
+		AF.request(APIRouterMainFlow.getAllUsers(sinceLastId)).responseData { (response) in
 			NetworkData.responseHandler(dataType: [UserModel].self, response: response) { response in
 				switch response {
 					case .success(let data):

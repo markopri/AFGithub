@@ -8,7 +8,7 @@
 import Alamofire
 
 enum APIRouterMainFlow: URLRequestConvertible {
-	case getAllUsers
+	case getAllUsers(Int)
 	case searchUsers(String)
 	case getAllUserRepositories(String)
 	case getRepositoryDetails(String, String)
@@ -41,6 +41,8 @@ enum APIRouterMainFlow: URLRequestConvertible {
 
 	var parameters: Parameters {
 		switch self {
+			case .getAllUsers(let sinceLastId):
+				return["since": sinceLastId]
 			case .searchUsers(let username):
 				return ["q": username]
 			default:

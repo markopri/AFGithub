@@ -15,12 +15,14 @@ class UsersListLogicController {
 	//MARK: Properties
 	typealias Handler = (UsersListStateModel) -> Void
 	weak var delegate: UsersListDelegate?
+	var username: String = ""
 
-	func getUsersListData(username: String, then handler: @escaping Handler) {
+	func getUsersListData(username: String, sinceLastId: Int = 0, then handler: @escaping Handler) {
 		handler(.loading)
+		self.username = username
 
 		if username == "" {
-			APIManagerMainFlow.getAllUsers { data in
+			APIManagerMainFlow.getAllUsers(sinceLastId: sinceLastId) { data in
 				if data.count == 0 {
 					handler(.successShowInfo)
 				} else {

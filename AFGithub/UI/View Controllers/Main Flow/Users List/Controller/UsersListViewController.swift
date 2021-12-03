@@ -76,6 +76,12 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 
 		cell.setupLayout(model: model)
 
+		if indexPath.row == tableViewDataList.count - 1 {
+			logicController.getUsersListData(username: logicController.username, sinceLastId: tableViewDataList[indexPath.row].id) { [weak self] state in
+				self?.handleState(state)
+			}
+		}
+
 		return cell
 	}
 
@@ -88,6 +94,7 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
 extension UsersListViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
+		self.tableViewDataList.removeAll()
 
 		logicController.getUsersListData(username: searchBar.searchTextField.text ?? "") { [weak self] state in
 			self?.handleState(state)
@@ -117,7 +124,7 @@ private extension UsersListViewController {
 	}
 
 	func executeStateSuccess(data: [UserModel]) {
-		self.tableViewDataList = data
+		self.tableViewDataList.append(contentsOf: data)
 		lblInfo.isHidden = true
 		tableView.reloadData()
 	}
