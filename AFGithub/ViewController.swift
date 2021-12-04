@@ -7,14 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		view.backgroundColor = .blue
+		self.navigationItem.title = "Base view"
 	}
 
-
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+	}
 }
 

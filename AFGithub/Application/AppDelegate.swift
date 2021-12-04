@@ -9,14 +9,15 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+	//MARK: Properties
 	var window: UIWindow?
+	var appCoordinator: AppCoordinator!
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-		self.window?.makeKeyAndVisible()
+		self.appCoordinator = AppCoordinator(window: self.window!)
 
-		self.window?.rootViewController = ViewController()
+		self.appCoordinator.startCoordinator()
 
 		return true
 

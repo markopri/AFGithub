@@ -8,5 +8,6 @@ target 'AFGithub' do
   use_frameworks!
 
   # Pods for AFGithub
+	pod 'Alamofire'
 
 end
